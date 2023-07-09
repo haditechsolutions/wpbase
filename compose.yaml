@@ -1,0 +1,28 @@
+services:
+  db:
+    image: ghcr.io/code-with-mehdi/mariadb:10.5
+    env_file: env
+    volumes:
+      - wpdb_vol:/var/lib/mysql
+      - ./data:/docker-entrypoint-initdb.d
+    
+
+  wp:
+    image: ghcr.io/code-with-mehdi/wordpress:php8.2-apache
+    env_file: env
+    depends_on: 
+      - db
+    ports:
+      - 8000:80
+    volumes:
+      #- wpsite:/var/www/html
+      - ./code:/var/www/html
+
+  adminer:
+    image: ghcr.io/code-with-mehdi/adminer:4.6
+    ports:
+      - 8080:8080
+volumes:
+  wpsite: {}
+  wpdb_vol: {}
+
