@@ -15,8 +15,7 @@ services:
     ports:
       - 8000:80
     volumes:
-      #- wpsite:/var/www/html
-      - ./code:/var/www/html
+      - ./code:/var/www/html:Z
 
   adminer:
     image: ghcr.io/code-with-mehdi/adminer:4.6
