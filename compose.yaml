@@ -1,7 +1,7 @@
 services:
   db:
     image: ghcr.io/code-with-mehdi/mariadb:10.5
-    env_file: env
+    env_file: env.ini
     volumes:
       - wpdb_vol:/var/lib/mysql
       - ./data:/docker-entrypoint-initdb.d:Z
@@ -9,7 +9,7 @@ services:
 
   wp:
     image: ghcr.io/code-with-mehdi/wordpress:php8.2-apache
-    env_file: env
+    env_file: env.ini
     depends_on: 
       - db
     ports:
