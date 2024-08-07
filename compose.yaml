@@ -1,6 +1,6 @@
 services:
   db:
-    image: ghcr.io/code-with-mehdi/mariadb:10.5
+    image: docker.io/library/mariadb:10.5
     env_file: env.ini
     volumes:
       - wpdb_vol:/var/lib/mysql
@@ -8,7 +8,7 @@ services:
     
 
   wp:
-    image: ghcr.io/code-with-mehdi/wordpress:php8.2-apache
+    image: docker.io/library/wordpress:php8.2-apache
     env_file: env.ini
     depends_on: 
       - db
@@ -18,7 +18,7 @@ services:
       - ./code:/var/www/html:Z
 
   adminer:
-    image: ghcr.io/code-with-mehdi/adminer:4.6
+    image: docker.io/library/adminer:4.6
     ports:
       - 8080:8080
 volumes:
