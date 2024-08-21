@@ -13,6 +13,10 @@ cp env.ini.example env.ini
 docker-compose up
 ```
 
+## Default username / password
+- username: admin
+- password: admin
+
 
 Copyright (C) 2023 *[Hadi Tech Solutions](https://haditechsolutions.ir)*
 

@@ -3,19 +3,21 @@ services:
     image: docker.io/library/mariadb:10.5
     env_file: env.ini
     volumes:
-      - wpdb_vol:/var/lib/mysql
       - ./data:/docker-entrypoint-initdb.d:Z
     
 
   wp:
-    image: docker.io/library/wordpress:php8.2-apache
+    #image: docker.io/library/wordpress:php8.2-apache
+    build:
+      context: .
+      dockerfile: Containerfile
     env_file: env.ini
     depends_on: 
       - db
     ports:
       - 8000:80
     volumes:
-      - ./code:/var/www/html:Z
+      - ./public_html:/var/www/html:Z
 
   adminer:
     image: docker.io/library/adminer:4.6
@@ -23,5 +25,4 @@ services:
       - 8080:8080
 volumes:
   wpsite: {}
-  wpdb_vol: {}
 
