@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-08-10 21:18:37+0000\n"
+"PO-Revision-Date: 2024-08-27 17:32:51+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,6 +14,10 @@ msgstr ""
 #: modules/link-in-bio/widgets/link-in-bio.php:28
 msgid "Minimalist"
 msgstr "مینیمالیست"
+
+#: modules/link-in-bio/module.php:35
+msgid "Create bio link landing pages and digital business cards that convert with Link in Bio widgets. Share your link in bio pages on your social media profiles. Create as many as you need for different audiences and goals."
+msgstr "صفحات فرود لینک بایو و کارت‌های ویزیت دیجیتالی که با ابزارک‌های لینک در بایو به تبدیل کمک می‌کنند، ایجاد کنید. لینک صفحات بایو خود را در پروفایل‌های شبکه‌های اجتماعی به اشتراک بگذارید. به تعداد مورد نیاز برای مخاطبان و اهداف مختلف ایجاد کنید."
 
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:1534
 msgid "Dimensions"
@@ -81,6 +85,14 @@ msgstr "حذف از کل سایت"
 msgid "After publishing this widget, you will be able to set it as visible on the entire site in the Admin Table."
 msgstr "پس از انتشار این ابزارک، می‌توانید آن را در جدول مدیر به عنوان قابل مشاهده در کل سایت تنظیم کنید."
 
+#: modules/floating-buttons/classes/render/contact-buttons-render-base.php:99
+msgid "Close Links Popup"
+msgstr "بستن پاپ‌آپ لینک‌ها"
+
+#: modules/floating-buttons/classes/render/contact-buttons-render-base.php:88
+msgid "Toggle Links Popup"
+msgstr "تغییر وضعیت پاپ‌آپ لینک‌ها"
+
 #: modules/floating-buttons/classes/render/contact-buttons-core-render.php:57
 msgid "Links window"
 msgstr "پنجره لینک‌ها"
@@ -114,9 +126,17 @@ msgstr "لینک‌های اطلاعات"
 msgid "Resource Links"
 msgstr "لینک‌های منبع"
 
+#: modules/floating-buttons/base/widget-contact-button-base.php:2167
+msgid "Adjust transition duration to change the speed of the <b>hover animation on desktop</b> and the <b>click animation on touchscreen</b>."
+msgstr "مدت زمان تحول را تنظیم کنید تا سرعت <b>انیمیشن شناور در دسکتاپ</b> و <b>انیمیشن کلیک در صفحه‌نمایش لمسی</b> را تغییر دهید."
+
 #: modules/floating-buttons/base/widget-contact-button-base.php:2093
 msgid "Button Bar"
 msgstr "نوار دکمه"
+
+#: modules/floating-buttons/base/widget-contact-button-base.php:2048
+msgid "Tooltips"
+msgstr "نکات راهنما"
 
 #: modules/floating-buttons/base/widget-contact-button-base.php:1997
 msgid "Buttons Spacing"
@@ -187,6 +207,10 @@ msgstr "نقطه اعلان"
 msgid "Paste Waze link"
 msgstr "چسباندن لینک Waze"
 
+#: modules/floating-buttons/base/widget-contact-button-base.php:126
+msgid "Tooltip"
+msgstr "نکته راهنما"
+
 #: modules/floating-buttons/base/widget-contact-button-base.php:68
 msgid "Call now"
 msgstr "اکنون تماس بگیرید"
@@ -197,6 +221,10 @@ msgstr "اکنون تماس بگیرید"
 #: modules/floating-buttons/module.php:59 assets/js/editor.js:50451
 msgid "Floating Buttons"
 msgstr "دکمه‌های شناور"
+
+#: modules/editor-events/module.php:54
+msgid "Editor events processing"
+msgstr "پردازش رویدادهای ویرایشگر"
 
 #: modules/editor-events/module.php:53
 msgid "Elementor Editor Events"
@@ -228,6 +256,10 @@ msgstr "جایگذاری درونی همه CSS ها را در %s قرار می�
 msgid "Copy and Share Link"
 msgstr "کپی و به اشتراک گذاری لینک"
 
+#: core/document-types/page-base.php:189
+msgid "No %s found in Trash."
+msgstr "هیچ %s در زباله‌دان یافت نشد."
+
 #: core/document-types/page-base.php:188
 msgid "No %s found."
 msgstr "%s یافت نشد."
@@ -239,6 +271,10 @@ msgstr "جستجوی %s"
 #: core/document-types/page-base.php:185
 msgid "New %s"
 msgstr "%s تازه"
+
+#: core/document-types/page-base.php:181
+msgid "All %s"
+msgstr "همه %s"
 
 #. translators: %s: br
 #: modules/promotions/admin-menu-items/form-submissions-promotion-item.php:25
@@ -506,6 +542,10 @@ msgstr "نامه"
 msgid "Enter your link"
 msgstr "لینک خود را وارد کنید"
 
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:346
+msgid "Link Type"
+msgstr "نوع لینک"
+
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:325
 msgid "Enter link text"
 msgstr "متن لینک را وارد کنید"
@@ -517,6 +557,10 @@ msgstr "تا <b>%d</b> لینک CTA اضافه کنید"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:79
 msgid "Top 10 Recipes"
 msgstr "۱۰ دستور غذای برتر"
+
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:76
+msgid "Get Healthy"
+msgstr "سالم بمانید"
 
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:43
 msgid "Join me on my journey to a healthier lifestyle"
