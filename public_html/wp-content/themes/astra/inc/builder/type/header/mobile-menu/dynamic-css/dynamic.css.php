@@ -117,10 +117,16 @@ function astra_hb_mobile_menu_dynamic_css( $dynamic_css, $dynamic_css_filtered =
 		$selector . ' .main-header-menu .menu-item > .ast-menu-toggle' => array(
 			'color' => $menu_resp_color_desktop,
 		),
-		$selector . ' .menu-item:hover > .menu-link, ' . $selector . ' .inline-on-mobile .menu-item:hover > .ast-menu-toggle' => array(
+		$selector . ' .main-header-menu .menu-item:hover > .menu-link, ' . $selector . ' .inline-on-mobile .menu-item:hover > .ast-menu-toggle' => array(
 			'color'      => $menu_resp_color_hover_desktop,
 			'background' => $menu_resp_bg_color_hover_desktop,
 		),
+
+		'.ast-builder-menu-mobile .menu-item:hover > .menu-link, ' . $selector . ' .inline-on-mobile .menu-item:hover > .ast-menu-toggle' => array(
+			'color'      => $menu_resp_color_hover_desktop,
+			'background' => $menu_resp_bg_color_hover_desktop,
+		),
+		
 		$selector . ' .menu-item:hover > .ast-menu-toggle' => array(
 			'color' => $menu_resp_color_hover_desktop,
 		),
@@ -147,7 +153,7 @@ function astra_hb_mobile_menu_dynamic_css( $dynamic_css, $dynamic_css_filtered =
 		),
 	);
 
-	$css_output_desktop[ $selector . ' .main-header-menu, ' . $selector . ' .main-header-menu .sub-menu' ] = astra_get_responsive_background_obj( $menu_resp_bg_color, 'desktop' );
+	$css_output_desktop[ $selector . ' .main-header-menu, ' . $selector . ' .main-header-menu .menu-link, ' . $selector . ' .main-header-menu .sub-menu' ] = astra_get_responsive_background_obj( $menu_resp_bg_color, 'desktop' );
 
 	$css_output_tablet = array(
 
@@ -164,7 +170,7 @@ function astra_hb_mobile_menu_dynamic_css( $dynamic_css, $dynamic_css_filtered =
 		$selector . ' .main-header-menu .menu-item > .ast-menu-toggle' => array(
 			'color' => $menu_resp_color_tablet,
 		),
-		$selector . ' .menu-item:hover > .menu-link, ' . $selector . ' .inline-on-mobile .menu-item:hover > .ast-menu-toggle' => array(
+		$selector . ' .main-header-menu .menu-item:hover > .menu-link, ' . $selector . ' .inline-on-mobile .menu-item:hover > .ast-menu-toggle' => array(
 			'color'      => $menu_resp_color_hover_tablet,
 			'background' => $menu_resp_bg_color_hover_tablet,
 		),
@@ -194,7 +200,7 @@ function astra_hb_mobile_menu_dynamic_css( $dynamic_css, $dynamic_css_filtered =
 		),
 	);
 
-	$css_output_tablet[ $selector . ' .main-header-menu, ' . $selector . ' .main-header-menu .sub-menu' ] = astra_get_responsive_background_obj( $menu_resp_bg_color, 'tablet' );
+	$css_output_tablet[ $selector . ' .main-header-menu , ' . $selector . ' .main-header-menu .menu-link, ' . $selector . ' .main-header-menu .sub-menu' ] = astra_get_responsive_background_obj( $menu_resp_bg_color, 'tablet' );
 
 	$css_output_mobile = array(
 
@@ -211,7 +217,7 @@ function astra_hb_mobile_menu_dynamic_css( $dynamic_css, $dynamic_css_filtered =
 		$selector . ' .main-header-menu .menu-item  > .ast-menu-toggle' => array(
 			'color' => $menu_resp_color_mobile,
 		),
-		$selector . ' .menu-item:hover > .menu-link, ' . $selector . ' .inline-on-mobile .menu-item:hover > .ast-menu-toggle' => array(
+		$selector . ' .main-header-menu .menu-item:hover > .menu-link, ' . $selector . ' .inline-on-mobile .menu-item:hover > .ast-menu-toggle' => array(
 			'color'      => $menu_resp_color_hover_mobile,
 			'background' => $menu_resp_bg_color_hover_mobile,
 		),
@@ -238,7 +244,7 @@ function astra_hb_mobile_menu_dynamic_css( $dynamic_css, $dynamic_css_filtered =
 		),
 	);
 
-	$css_output_mobile[ $selector . ' .main-header-menu, ' . $selector . ' .main-header-menu .sub-menu' ] = astra_get_responsive_background_obj( $menu_resp_bg_color, 'mobile' );
+	$css_output_mobile[ $selector . ' .main-header-menu, ' . $selector . ' .main-header-menu .menu-link, ' . $selector . ' .main-header-menu .sub-menu' ] = astra_get_responsive_background_obj( $menu_resp_bg_color, 'mobile' );
 
 	if ( true === $sub_menu_divider_toggle ) {
 

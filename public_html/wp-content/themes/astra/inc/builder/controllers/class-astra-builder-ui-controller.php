@@ -31,7 +31,7 @@ if ( ! class_exists( 'Astra_Builder_UI_Controller' ) ) {
 		 * @param bool   $base if the baseline class should be added.
 		 */
 		public static function fetch_svg_icon( $icon = '', $base = true ) {
-			$output = '<span class="ahfb-svg-iconset ast-inline-flex' . ( $base ? ' svg-baseline' : '' ) . '">';
+			$output = '<span aria-hidden="true" class="ahfb-svg-iconset ast-inline-flex' . ( $base ? ' svg-baseline' : '' ) . '">';
 
 			/** @psalm-suppress DocblockTypeContradiction */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
 			if ( ! self::$ast_svgs ) {
@@ -90,7 +90,29 @@ if ( ! class_exists( 'Astra_Builder_UI_Controller' ) ) {
 								break;
 						}
 
-						echo '<a href="' . esc_url( $link ) . '"' . esc_attr( $item['label'] ? ' aria-label=' . $item['label'] . '' : ' aria-label=' . $item['id'] . '' ) . ' ' . ( 'phone' === $item['id'] || 'email' === $item['id'] ? '' : 'target="_blank" rel="noopener noreferrer" ' ) . 'style="--color: ' . esc_attr( ! empty( $item['color'] ) ? $item['color'] : '#3a3a3a' ) . '; --background-color: ' . esc_attr( ! empty( $item['background'] ) ? $item['background'] : 'transparent' ) . ';" class="ast-builder-social-element ast-inline-flex ast-' . esc_attr( $item['id'] ) . ' ' . esc_attr( $builder_type ) . '-social-item">';
+						/**
+						 * Filter the social links rel attribute.
+						 *
+						 * @param string $rel  Social link's rel attribute.
+						 * @param array  $item Social icon item.
+						 *
+						 * @since 4.8.10
+						 *
+						 * @psalm-suppress TooManyArguments
+						 */
+						$rel = apply_filters( 'astra_social_icon_attribute_rel', 'noopener noreferrer', $item );
+
+						echo sprintf(
+							'<a href="%s" aria-label="%s" %s style="--color: %s; --background-color: %s;" class="ast-builder-social-element ast-inline-flex ast-%s %s-social-item">',
+							esc_url( $link ),
+							esc_attr( $item['label'] ? $item['label'] : $item['id'] ),
+							in_array( $item['id'], [ 'phone', 'email' ], true ) ? '' : sprintf( 'target="_blank" rel="%s"', esc_attr( $rel ) ),
+							esc_attr( ! empty( $item['color'] ) ? $item['color'] : '#3a3a3a' ),
+							esc_attr( ! empty( $item['background'] ) ? $item['background'] : 'transparent' ),
+							esc_attr( $item['id'] ),
+							esc_attr( $builder_type )
+						);
+
 						echo self::fetch_svg_icon( $item['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 						if ( $show_label ) {
@@ -115,7 +137,7 @@ if ( ! class_exists( 'Astra_Builder_UI_Controller' ) ) {
 
 			$theme_author = astra_get_theme_author_details();
 
-			$content = astra_get_option( $index );
+			$content = astra_get_i18n_option( $index, Astra_Builder_Helper::get_translatable_string( $index ) );
 			if ( $content || is_customize_preview() ) {
 				$link_style = '';
 				echo '<div class="ast-header-html inner-link-style-' . esc_attr( $link_style ) . '">';
@@ -127,7 +149,11 @@ if ( ! class_exists( 'Astra_Builder_UI_Controller' ) ) {
 				$content = str_replace( '[current_year]', gmdate( 'Y' ), $content );
 				$content = str_replace( '[site_title]', get_bloginfo( 'name' ), $content );
 				$content = str_replace( '[theme_author]', '<a href=" ' . esc_url( $theme_author['theme_author_url'] ) . '" rel="nofollow noopener" target="_blank">' . $theme_author['theme_name'] . '</a>', $content );
-				echo do_shortcode( wp_kses_post( wpautop( $content ) ) );
+		
+				// First applying wpautop to handle paragraphs, then removing extra <p> around shortcodes.
+				$content = shortcode_unautop( wpautop( $content ) );
+		
+				echo do_shortcode( wp_kses_post( $content ) );
 				echo '</div>';
 				echo '</div>';
 			}
@@ -210,7 +236,7 @@ if ( ! class_exists( 'Astra_Builder_UI_Controller' ) ) {
 		public static function render_mobile_trigger() {
 
 			$icon             = astra_get_option( 'header-trigger-icon' );
-			$mobile_label     = astra_get_option( 'mobile-header-menu-label' );
+			$mobile_label     = astra_get_i18n_option( 'mobile-header-menu-label', _x( '%astra%', 'Primary Menu: Menu Label (Mobile Menu)', 'astra' ) );
 			$toggle_btn_style = astra_get_option( 'mobile-header-toggle-btn-style' );
 			$aria_controls    = '';
 			if ( false === Astra_Builder_Helper::$is_header_footer_builder_active ) {
@@ -227,7 +253,7 @@ if ( ! class_exists( 'Astra_Builder_UI_Controller' ) ) {
 						?>
 					</span>
 					<?php
-					if ( isset( $mobile_label ) && ! empty( $mobile_label ) ) {
+					if ( ! empty( $mobile_label ) ) {
 						?>
 
 						<span class="mobile-menu-wrap">
@@ -266,22 +292,25 @@ if ( ! class_exists( 'Astra_Builder_UI_Controller' ) ) {
 		 */
 		public static function render_site_identity( $device ) {
 			?>
-				<?php
-				if ( is_customize_preview() ) {
-					self::render_customizer_edit_button();
-				}
-				?>
 				<div
 				<?php
-					echo astra_attr(
-						'site-identity',
-						array(
-							'class' => 'site-branding ast-site-identity',
-						)
+					echo wp_kses_post(
+						astra_attr(
+							'site-identity',
+							array(
+								'class' => 'site-branding ast-site-identity',
+							)
+						) 
 					);
 				?>
 				>
-					<?php astra_logo( $device ); ?>
+					<?php
+					// placed inside site-identity div to prevent multiple edit buttons.
+					if ( is_customize_preview() ) {
+						self::render_customizer_edit_button();
+					}
+					astra_logo( $device );
+					?>
 				</div>
 			<!-- .site-branding -->
 			<?php
@@ -368,8 +397,9 @@ if ( ! class_exists( 'Astra_Builder_UI_Controller' ) ) {
 					$link_type   = astra_get_option( 'header-account-link-type' );
 
 					$account_link = astra_get_option( 'header-account-login-link' );
+					$show_menu    = astra_get_option( 'header-account-action-menu-display-on' );
 
-					$logged_in_text = astra_get_option( 'header-account-logged-in-text' );
+					$logged_in_text = astra_get_i18n_option( 'header-account-logged-in-text', _x( '%astra%', 'Header Builder: Account Widget - Logged In View Text', 'astra' ) );
 
 					if ( 'default' !== $account_type && 'default' === $link_type && defined( 'ASTRA_EXT_VER' ) ) {
 						$new_tab = 'target=_self';
@@ -394,7 +424,9 @@ if ( ! class_exists( 'Astra_Builder_UI_Controller' ) ) {
 						$link_rel = ( ! empty( $account_link['link_rel'] ) ? 'rel=' . esc_attr( $account_link['link_rel'] ) : '' );
 					}
 
-					$link_href = ( '' !== $link_url ) ? 'href=' . esc_url( $link_url ) : '';
+					if ( 'hover' === $show_menu ) {
+						$link_href = ( '' !== $link_url ) ? 'href=' . esc_url( $link_url ) : '';
+					}
 
 					$link_classes = array(
 						'ast-header-account-link',
@@ -446,7 +478,7 @@ if ( ! class_exists( 'Astra_Builder_UI_Controller' ) ) {
 
 					<?php
 					$action_type     = astra_get_option( 'header-account-logout-action' );
-					$logged_out_text = astra_get_option( 'header-account-logged-out-text' );
+					$logged_out_text = astra_get_i18n_option( 'header-account-logged-out-text', _x( '%astra%', 'Header Builder: Account Widget - Logged Out View Text', 'astra' ) );
 					$login_link      = astra_get_option( 'header-account-logout-link' );
 
 					$extend_text_profile_type = astra_get_option( 'header-account-logout-style-extend-text-profile-type' );

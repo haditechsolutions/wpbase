@@ -3,8 +3,6 @@
  * Typography - Breadcrumbs Options for theme.
  *
  * @package     Astra
- * @author      Brainstorm Force
- * @copyright   Copyright (c) 2020, Brainstorm Force
  * @link        https://www.brainstormforce.com
  * @since       Astra 1.7.0
  */
@@ -30,7 +28,6 @@ if ( ! class_exists( 'Astra_Breadcrumbs_Typo_Configs' ) ) {
 	 * Register Colors and Background - Breadcrumbs Options Customizer Configurations.
 	 */
 	class Astra_Breadcrumbs_Typo_Configs extends Astra_Customizer_Config_Base {
-
 		/**
 		 * Register Colors and Background - Breadcrumbs Options Customizer Configurations.
 		 *
@@ -61,7 +58,7 @@ if ( ! class_exists( 'Astra_Breadcrumbs_Typo_Configs' ) ) {
 							'operator' => '!=',
 							'value'    => 'none',
 						),
-						( true === Astra_Builder_Helper::$is_header_footer_builder_active ) ?
+						true === Astra_Builder_Helper::$is_header_footer_builder_active ?
 							Astra_Builder_Helper::$design_tab_config : Astra_Builder_Helper::$general_tab_config,
 					),
 					'divider'   => array( 'ast_class' => 'ast-section-spacing ast-bottom-section-divider' ),

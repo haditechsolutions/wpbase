@@ -133,7 +133,8 @@ if ( ! class_exists( 'Astra_Builder_Footer' ) ) {
 		 */
 		public function footer_markup() {
 
-			$display_footer = get_post_meta( get_the_ID(), 'footer-sml-layout', true );
+			/** @psalm-suppress InvalidArgument */ // phpcs:ignore Generic.Commenting.DocComment.MissingShort
+			$display_footer = get_post_meta( astra_get_post_id(), 'footer-sml-layout', true );
 
 			$display_footer = apply_filters( 'astra_footer_bar_display', $display_footer );
 
@@ -227,7 +228,7 @@ if ( ! class_exists( 'Astra_Builder_Footer' ) ) {
 
 			$theme_author = astra_get_theme_author_details();
 
-			$content = astra_get_option( 'footer-copyright-editor' );
+			$content = astra_get_i18n_option( 'footer-copyright-editor', _x( '%astra%', 'Footer Builder: Copyright Editor Text', 'astra' ) );
 			if ( $content || is_customize_preview() ) {
 				echo '<div class="ast-footer-copyright">';
 						$content = str_replace( '[copyright]', '&copy;', $content );

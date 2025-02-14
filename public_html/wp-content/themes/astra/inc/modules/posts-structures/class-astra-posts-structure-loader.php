@@ -3,8 +3,6 @@
  * Post Structures loader for Astra theme.
  *
  * @package     Astra
- * @author      Brainstorm Force
- * @copyright   Copyright (c) 2022, Brainstorm Force
  * @link        https://www.brainstormforce.com
  * @since       Astra 4.0.0
  */
@@ -255,6 +253,11 @@ class Astra_Posts_Structure_Loader {
 	public static function get_supported_post_types() {
 		if ( empty( self::$supported_post_types ) || is_customize_preview() ) {
 			self::$supported_post_types = astra_get_queried_post_types();
+			
+			// If Elementor is active, reindex the array.
+			if ( defined( 'ELEMENTOR_VERSION' ) ) {
+				self::$supported_post_types = array_values( self::$supported_post_types );
+			}
 		}
 
 		return apply_filters( 'astra_dynamic_post_structure_posttypes', self::$supported_post_types );
