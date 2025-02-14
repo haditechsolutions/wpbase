@@ -1,0 +1,139 @@
+.woodapp-whatsapp-no p
+{
+    display:none;
+}
+
+.wp-heading-inline
+{
+    font-family:iransans;
+}
+
+.ui-tabs .ui-tabs-nav li
+{
+	float:right !important;
+}
+#your-profile label+a, label
+{
+	font-family:iranyekan ;
+}
+.woodapp-panel-sidebar
+{
+    display:none !important;
+}
+.wp-color-result-text
+{
+	    background: #ad113c !important;
+    border-radius: 2px 0 0 2px;
+    border-right: 1px solid #ccc;
+    color: #fff !important;
+    display: block;
+    font-family: iranyekan;
+    line-height: 2.54545455;
+    padding: 0 6px;
+    text-align: center;
+}
+.ui-tabs .ui-tabs-nav
+{
+	    margin: 0;
+    padding: .2em .2em 0;
+    border-bottom: 1px solid #DDD;
+    background-color: aliceblue;
+}
+.ui-widget-content
+{
+	    border: 1px solid red;
+    background: rgb(204 204 204 / 46%);
+    color: #222;
+}
+.wp-heading-inline
+{
+	    background-color: #db0a56;
+    padding: 14px;
+    color: white;
+    border-radius: 9px;
+}
+#publish-btn
+{
+	
+}
+.wp-picker-container
+{
+	    margin: 15px 0px;
+}
+.ui-widget-header
+{
+	
+}
+.ui-widget-content
+{
+	font-family:iranyekan !important; 
+}
+.removeBanner,.upload-image-button
+{
+	       background-color: #db0a56;
+    color: white;
+    border-radius: 7px;
+	cursor:pointer;
+    padding: 7px;
+    margin: 5px 0px 15px;
+}
+.woodapp-woo-api-btn
+{
+	width: 100%;
+    font-family: iranyekan !important;
+}
+.ui-widget input, .ui-widget select, .ui-widget textarea, .ui-widget button
+{
+	font-family:iranyekan !important;
+}
+.woodapp-woo-api-field-group
+{
+	margin:10px 0px;
+}
+.device-display
+{
+  margin-top: 15px;
+}
+.device-display img
+{
+  width: 50%;
+}
+.woodapp-wc-api-panel-sidebar
+{
+  float:left;
+}
+.woodapp-wc-api-panel-body
+{
+  float:right;
+}
+.woodapp-wc-api-panel-body
+{
+  margin-top: 40px ;
+}
+.woodapp-wc-api-panel-heading
+{
+  font-size: 17px;
+  
+  background-color: aliceblue;
+  BORDER-RADIUS: 10px;
+  padding: 10px;
+  margin-bottom: 46px;
+}
+.woodapp-wc-api-panel-body
+{
+  margin-top: 26px;
+  width: 100%;
+}
+.woodapp-wc-api-panel-body div
+{
+  margin-bottom: 20px;
+}
+.woodapp-wc-api-form-groups select
+{
+  width: 100%;
+}
+.woodapp-wc-api-form-groups label
+{
+  margin-top: 10px;
+  margin-left: 20px;
+}
