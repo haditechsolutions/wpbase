@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Themes - Astra package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2025-02-15 15:47:03+0000\n"
+"PO-Revision-Date: 2025-01-13 05:20:44+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,12 +10,6 @@ msgstr ""
 "X-Generator: GlotPress/4.0.1\n"
 "Language: fa\n"
 "Project-Id-Version: Themes - Astra\n"
-
-#. Description of the theme
-#: style.css
-#, gp-priority: high
-msgid "The Astra WordPress theme is lightning-fast and highly customizable. It has over 1 million downloads and the only theme in the world with 5,700+ five-star reviews! It’s ideal for professional web designers, solopreneurs, small businesses, eCommerce, membership sites and any type of website. It offers special features and templates so it works perfectly with all page builders like Spectra, Elementor, Beaver Builder, etc. Fast performance, clean code, mobile-first design and schema markup are all built-in, making the theme exceptionally SEO-friendly. It’s fully compatible with WooCommerce, SureCart and other eCommerce plugins and comes with lots of store-friendly features and templates. Astra also provides expert support for free users. A dedicated team of fully trained WordPress experts are on hand to help with every aspect of the theme. Try the live demo of Astra: https://zipwp.org/themes/astra/"
-msgstr "پوستۀ وردپرسی آسترا به سرعتی مثل برق با قابلیت سفارشی‌سازی فوق‌العاده بالا، یکی از محبوب‌ترین پوسته‌های جهان است! این پوسته با بیش از ۱ میلیون دریافتی، بالای ۵۷۰۰ نقد و بررسی پنج‌ستاره (تنها پوسته‌ای در دنیا که با این حجم از بازخورد مثبت)، انتخابی ایده‌آل برای طراحان حرفه‌ای وب، فریلنسرها، کسب‌وکارهای کوچک، فروشگاه‌های اینترنتی، سایت‌های عضویت‌محور و هر نوع وب‌سایت دیگر است. این پوسته دارای ویژگی‌ها و قالب‌های خاصی است که باعث می‌شود به‌طور کامل با تمام صفحه‌سازها مانند اسپکترا، المنتور، بیور بیلدر و غیره سازگار باشد. عملکرد سریع، کدهای تمیز، طراحی موبایل‌فرست (اولویت‌دهی به موبایل) و نشانه‌گذاری اسکیما همگی به‌صورت داخلی در این پوسته تعبیه شده‌اند، که آن را به‌طور استثنایی سازگار با سئو می‌کند. این پوسته به‌طور کامل با ووکامرس، SureCart و سایر افزونه‌های تجارت الکترونیک سازگار است و دارای ویژگی‌ها و قالب‌های متنوعی است که برای فروشگاه‌ها بسیار کاربردی هستند. علاوه بر این، آسترا پشتیبانی تخصصی را حتی برای کاربران رایگان فراهم می‌کند. یک تیم اختصاصی متشکل از متخصصان آموزش‌دیده وردپرس آماده‌اند تا در تمام جنبه‌های مربوط به این پوسته به شما کمک کنند. پیش‌نمایش زندۀ آسترا را امتحان نمایید: https://zipwp.org/themes/astra/"
 
 #. Theme Name of the theme
 #: style.css admin/includes/class-astra-menu.php:162
@@ -488,25 +482,9 @@ msgstr "تعداد + متن"
 msgid "Configuring"
 msgstr "در حال پیکربندی"
 
-#: admin/includes/class-astra-menu.php:823
-msgid "Connect your WordPress plugins, WooCommerce sites, apps, and websites for powerful automations."
-msgstr "افزونه‌های وردپرس، سایت‌های ووکامرس، برنامه‌ها و وب‌سایت‌های خود را برای اتوماسیون‌های قدرتمند متصل کنید."
-
 #: admin/includes/class-astra-menu.php:854
 msgid "Stripe Payments for WooCommerce."
 msgstr "پرداخت‌های استرایپ برای ووکامرس."
-
-#: inc/customizer/class-astra-customizer.php:1717
-msgid "The future will belongs to those who believe in the beauty of their dreams."
-msgstr "آینده متعلق به کسانی است که به زیبایی رویاهایشان ایمان دارند."
-
-#: inc/customizer/class-astra-customizer.php:1713
-msgid "Explore different font families, sizes, weights, and styles to find the perfect combination that encapsulates the essence of your brand. With each adjustment, see how your message transforms, becoming a powerful reflection of your identity and vision."
-msgstr "انواع خانواده‌های فونت، اندازه‌ها، وزن‌ها و سبک‌های مختلف را کاوش کنید تا ترکیب مناسبی که جوهر برند شما را در بر می‌گیرد، پیدا کنید. با هر تنظیم، ببینید که چگونه پیام شما تغییر می‌کند و به بازتابی قدرتمند از هویت و دیدگاه شما تبدیل می‌شود."
-
-#: inc/customizer/class-astra-customizer.php:1670
-msgid "Here's how the body text will look like on your website. You can customize the typography to match your brand personality. Whether you aim for a modern and sleek appearance or a more traditional and elegant feel, the right typography sets the tone for your content."
-msgstr "این‌گونه متن بدنه در وب‌سایت شما به نظر خواهد رسید. شما می‌توانید تایپوگرافی را برای مطابقت با شخصیت برند خود سفارشی کنید. چه به دنبال ظاهری مدرن و شیک باشید و چه احساس سنتی و مجللی، تایپوگرافی مناسب لحن محتوای شما را تعیین می‌کند."
 
 #: inc/customizer/class-astra-customizer.php:1595
 msgid "Extra"
